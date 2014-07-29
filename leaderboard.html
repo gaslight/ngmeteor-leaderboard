@@ -3,32 +3,18 @@
 </head>
 
 <body>
-  <div id="outer">
-    {{> leaderboard}}
+  <div id="outer" ng-controller="LeaderBoardController">
+    <div class="leaderboard">
+      <div ng-repeat="player in players" class="player" ng-class="{selected: isSelected(player)}" ng-click="selectPlayer(player)">
+        <span class="name">[[player.name]]</span>
+        <span class="score">[[player.score]]</span>
+      </div>
+    </div>
+    <div class="details" ng-if="selected.player">
+      <div class="name">[[selected.player.name]]</div>
+      <input type="button" class="inc" value="Give 5 points" ng-click="awardPoints()"/>
+    </div>
+
+    <div ng-if="!selected.player" class="none">Click a player to select</div>
   </div>
 </body>
-
-<template name="leaderboard">
-  <div class="leaderboard">
-    {{#each players}}
-      {{> player}}
-    {{/each}}
-  </div>
-
-  {{#if selected_name}}
-  <div class="details">
-    <div class="name">{{selected_name}}</div>
-    <input type="button" class="inc" value="Give 5 points" />
-  </div>
-  {{else}}
-  <div class="none">Click a player to select</div>
-  {{/if}}
-</template>
-
-<template name="player">
-  <div class="player {{selected}}">
-    <span class="name">{{name}}</span>
-    <span class="score">{{score}}</span>
-  </div>
-</template>
-
