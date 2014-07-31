@@ -5,7 +5,7 @@
 <body>
   <div id="outer" ng-controller="LeaderBoardController">
     <div class="leaderboard">
-      <div ng-repeat="player in players" class="player" ng-class="{selected: isSelected(player)}" ng-click="selectPlayer(player)">
+      <div ng-repeat="player in players | orderBy:'-score'" class="player" ng-class="{selected: isSelected(player)}" ng-click="selectPlayer(player)">
         <span class="name">[[player.name]]</span>
         <span class="score">[[player.score]]</span>
       </div>
