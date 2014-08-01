@@ -3,18 +3,22 @@
 </head>
 
 <body>
+  {{> loginButtons}}
   <div id="outer" ng-controller="LeaderBoardController">
-    <div class="leaderboard">
-      <div ng-repeat="player in players | orderBy:'-score'" class="player" ng-class="{selected: isSelected(player)}" ng-click="selectPlayer(player)">
-        <span class="name">[[player.name]]</span>
-        <span class="score">[[player.score]]</span>
+    <div ng-if="currentUser">
+      Logged in as: [[currentUser.profile.name]]
+      <div class="leaderboard">
+        <div ng-repeat="player in players | orderBy:'-score'" class="player" ng-class="{selected: isSelected(player)}" ng-click="selectPlayer(player)">
+          <span class="name">[[player.name]]</span>
+          <span class="score">[[player.score]]</span>
+        </div>
       </div>
-    </div>
-    <div class="details" ng-if="selected.player">
-      <div class="name">[[selected.player.name]]</div>
-      <input type="button" class="inc" value="Give 5 points" ng-click="awardPoints()"/>
-    </div>
+      <div class="details" ng-if="selected.player">
+        <div class="name">[[selected.player.name]]</div>
+        <input type="button" class="inc" value="Give 5 points" ng-click="awardPoints()"/>
+      </div>
 
-    <div ng-if="!selected.player" class="none">Click a player to select</div>
+      <div ng-if="!selected.player" class="none">Click a player to select</div>
+    </div>
   </div>
 </body>

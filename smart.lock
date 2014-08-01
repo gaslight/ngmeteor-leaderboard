@@ -3,15 +3,12 @@
   "dependencies": {
     "basePackages": {
       "ngMeteor": {
-        "git": "https://github.com/loneleeandroo/ngMeteor.git",
-        "branch": "v0.2"
+        "path": "../ngMeteor"
       }
     },
     "packages": {
       "ngMeteor": {
-        "git": "https://github.com/loneleeandroo/ngMeteor.git",
-        "branch": "v0.2",
-        "commit": "1231aefae20de408ece4471b93984d30633153ec"
+        "path": "../ngMeteor"
       }
     }
   }

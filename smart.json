@@ -1,8 +1,7 @@
 {
   "packages": {
     "ngMeteor": {
-      "git": "https://github.com/loneleeandroo/ngMeteor.git",
-      "branch": "v0.2"
+      "path": "/Users/superchris/dev/ngMeteor"
     }
   }
 }
