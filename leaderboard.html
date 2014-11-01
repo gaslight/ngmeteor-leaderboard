@@ -5,7 +5,6 @@
 <body>
   {{> loginButtons}}
   <div id="outer" ng-controller="LeaderBoardController">
-    <div ng-if="currentUser">
       Logged in as: [[currentUser.profile.name]]
       <div class="leaderboard">
         <div ng-repeat="player in players | orderBy:'-score'" class="player" ng-class="{selected: isSelected(player)}" ng-click="selectPlayer(player)">
@@ -19,6 +18,5 @@
       </div>
 
       <div ng-if="!selected.player" class="none">Click a player to select</div>
-    </div>
   </div>
 </body>

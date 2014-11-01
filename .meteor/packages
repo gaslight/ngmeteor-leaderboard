@@ -6,6 +6,7 @@
 standard-app-packages
 autopublish
 insecure
-ngMeteor
 accounts-github
 accounts-ui
+superchris:angular-meteor
+

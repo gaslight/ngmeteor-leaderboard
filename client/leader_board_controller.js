@@ -4,7 +4,7 @@ angular.module("app").controller("LeaderBoardController", ["$scope", "$collectio
 
   $collection(Players).bind($scope, 'players');
 
-  $user.bind($scope, "currentUser")
+  $user.bind($scope, "currentUser");
 
   $scope.isSelected = function(player) {
     return this.selected.player == player;
