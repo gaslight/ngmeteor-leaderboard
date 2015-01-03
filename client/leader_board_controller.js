@@ -1,10 +1,8 @@
-angular.module("app").controller("LeaderBoardController", ["$scope", "$collection", "$user", function($scope, $collection, $user) {
+angular.module("app").controller("LeaderBoardController", ["$scope", "$collection",  function($scope, $collection) {
 
   $scope.selected = {};
 
   $collection(Players).bind($scope, 'players');
-
-  $user.bind($scope, "currentUser");
 
   $scope.isSelected = function(player) {
     return this.selected.player == player;
